@@ -19,7 +19,7 @@ You do not need to clone this repository, just choose the file you want and eith
 ## Requirements
 If using ISE 3.0 or older, you need to **Enable Portal Customization with HTML and JavaScript**. To do this, navigate to **Administration · System > Admin Access**.  Choose **Settings > Portal Customization** and enable the radio button.  Remember to **Save**.
 
-![Enable Portal Customization]()
+![Enable Portal Customization](https://github.com/ISEDemoLab/ISE_Guest_Webinar/blob/main/images/enable_javascript.png)
 
 This is the default setting in version 3.1 and newer and cannot be changed.
 
@@ -28,7 +28,7 @@ The scripts in this repository are meant to be used in the Optional Content 2 te
 
 You _do_ have to follow a specific sequence for the script to work.  Before pasting the script into the Optional Content 2 text area, you _**must**_ click the 'Toggle HTML Source' button (shown below).  Once the script is pasted, click the same button again.  If you do the, the script _WILL NOT WORK_. 
 
-![html_source]()
+![html_source](https://github.com/ISEDemoLab/ISE_Guest_Webinar/blob/main/images/html_source.png)
 
 ## Instructions per script
 Some of the scripts in this repository have specific instructions and these instructions will be contained in the .txt file for the script.
