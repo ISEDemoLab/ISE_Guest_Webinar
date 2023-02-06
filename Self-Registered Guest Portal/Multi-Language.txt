@@ -1,0 +1,63 @@
+﻿
+
+<script>
+setTimeout(function() {
+$('.ui-submit').hide();
+$('.ui-controlgroup-controls').hide();
+}, 500);
+ 
+setTimeout(function() {
+ 
+  var port = '8443';                                    //port                 
+  var portals = {
+    'русский (Russian)': '8c1a1ef2-6731-11e7-a3d7-3a6097fba376',   //portal ID #1
+    '日本語 (Japanese)':'27411630-1111-11e7-a9f0-005056aba111',  //portal ID #2
+    'Deutsche (German)':'27488222-4222-1222-a222-005056ab2222',    //portal ID #3
+  };
+ 
+  var hostname = window.location.hostname;
+  var WebSessionId = window.location.href.substr(window.location.href.search("\\?")).split("=")[2];
+  var contentTemplate = $('.cisco-ise-scriptable');
+  var portalKeys = Object.keys(portals);
+ 
+  if(portalKeys.length > 1){
+      var outlet = $('<div class="language-button-outlet" style="display: flex;justify-content:center;"><div class="left-side" style="width: 200px;"></div><div class="right-side" style="width: 200px;"></div></div>');
+      contentTemplate.append(outlet);
+  };
+ 
+  var buttonTemplate = function(title, link){
+ 
+    var portalLink = 'https://' + hostname + ':' + port + '/portal/gateway?sessionId=' + WebSessionId + '&portal=' + link + '&action=cwa';
+ 
+    return $('<div class="cisco-ise-form-buttons">'
+    + '<div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="b" data-inline="true" data-mini="true" data-disabled="false" class="ui-submit ui-btn ui-shadow ui-btn-corner-all ui-mini ui-btn-inline ui-btn-up-b" aria-disabled="false">'
+    + '<span class="ui-btn-inner">'
+    + '<a href=' + portalLink + ' style="color: #fff;text-decoration: none;"><span class="ui-btn-text">' + title +'</span></a>'
+    + '</span>'
+    + '</div>'
+    + '</div>');
+  };
+ 
+  var languageConstructor = function(portals){
+    portalKeys.forEach(function(key, i){
+    var button = buttonTemplate(key, portals[key]);
+      if(portalKeys.length <= 1){
+          return contentTemplate.append(button);
+        }
+       
+        if(i%2 == 0){
+        $('.language-button-outlet .left-side').append(button);
+        }else{
+        $('.language-button-outlet .right-side').append(button);
+        }
+      });
+    };
+   
+  languageConstructor(portals);
+}, 1500);
+</script>
+ 
+setTimeout(function() {
+  languageConstructor(portals);
+}, 500);
+</script>

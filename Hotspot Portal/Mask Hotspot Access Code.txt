@@ -1,0 +1,5 @@
+To mask the Access Code with · character
+
+<script>
+document.getElementById("accessCode").setAttribute('type', 'password');
+</script>

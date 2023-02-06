@@ -1,0 +1,16 @@
+Place following script in the Sponsor Portal > Portal Page Customization > Sponsor Portal Settings > Instructional Text
+
+
+<script>
+
+    $(document).ready(function(){
+
+          setTimeout(function() {
+
+               $('#printAccount').hide();
+
+          }, 5000);                    
+
+    });
+
+</script>

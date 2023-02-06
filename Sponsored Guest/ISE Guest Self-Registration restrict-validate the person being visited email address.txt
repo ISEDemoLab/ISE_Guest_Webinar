@@ -1,0 +1,9 @@
+<script>
+     setTimeout(function(){
+          $.validator.addMethod("customemailvalidator", function(value, element) {
+       return /^(\w+\.?)+@(example1|example2)\.com$/.test( value );
+     }, 'Please enter a valid email.');
+    
+     jQuery("[name='guestUser.fieldValues.ui_person_visited']").rules("add",{customemailvalidator:true});
+     }, 50);
+</script>

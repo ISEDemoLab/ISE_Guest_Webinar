@@ -1,0 +1,6 @@
+
+Remember to put 5 spaces in the Contact field in the Text Entry section at the top of the Portal Customization page.
+
+
+
+<a href="#" onclick="$('#support_info').submit();" id="ui_login_support_info" class="ui-link"><button>Contact Support</button></a>

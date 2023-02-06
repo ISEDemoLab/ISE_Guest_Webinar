@@ -1,0 +1,12 @@
+
+The script grabs the ISE hostname and RADIUS Session ID from the current Hotspot URL and inserts them into the URL for your guest portal.  Change the port number and the PortalID to match yours.
+
+
+
+<script>
+jQuery(window).ready(function() {
+var hostname = window.location.hostname;
+var WebSessionId = window.location.href.substr(window.location.href.search("\\?")).split("=")[2];
+jQuery('.cisco-ise-body').append(' <center><a href="https://'+hostname+':8443/portal/PortalSetup.action?portal=6c07c897-c923-40ee-ab2a-45a442863700&sessionId='+WebSessionId+'&action=cwa" style="color: rgb(0,255,0)"><font color="212121"><button type="submit">Go to Hotspot Portal</button></font></a></center>');
+});
+</script>

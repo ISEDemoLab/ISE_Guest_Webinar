@@ -1,0 +1,20 @@
+This script will turn the "Don't have and account?" link into a button
+
+<script>
+ jQuery("form[name='selfRegForm']").find('.cisco-ise-form-buttons').css('display', 'none');
+ jQuery("form[name='selfRegForm']").append('<div class="cisco-ise-form-buttons"><div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="b" data-inline="true" data-mini="true" data-disabled="false" class="ui-submit ui-btn ui-shadow ui-btn-corner-all ui-mini ui-btn-inline ui-btn-up-b reg-acc-btn" aria-disabled="false"><span class="ui-btn-inner"><span class="ui-btn-text">Don\'t have an account?</span></span></div></div>');
+ jQuery(".reg-acc-btn ").on("click", function(event){
+  jQuery('#ui_login_self_reg_button').trigger("click");
+ });
+</script>
+
+
+Move the button between text and the form - add following line before </script>
+
+jQuery("form[name='loginForm']").before(jQuery("form[name='selfRegForm']").not("form[novalidate='novalidate']"));
+
+
+
+Move the button to the top of the page - add following line before </script>
+
+jQuery(".cisco-ise-scriptable").prepend(jQuery("form[name='selfRegForm']").not("form[novalidate='novalidate']"));

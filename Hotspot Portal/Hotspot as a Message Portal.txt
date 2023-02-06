@@ -1,0 +1,20 @@
+This script removes the buttons from the portal.  
+
+In the Acceptable Use Policy (AUP) Page Settings, deselect the Include an AUP page box.
+
+Update the following:
+- Banner title
+- Browser Page Title
+- Content Title
+- Instructional Text
+- Content Area
+
+Add the script in Optional Content 2
+
+<script>
+(function(){
+    jQuery('.cisco-ise-aup-text').hide();
+    jQuery('.cisco-ise-aup-controls').hide();
+setTimeout(function(){ jQuery('#portal-session-timeout-popup-screen, #portal-session-timeout-popup-popup, #portal-session-timeout-popup').remove(); }, 100);
+})();
+</script>

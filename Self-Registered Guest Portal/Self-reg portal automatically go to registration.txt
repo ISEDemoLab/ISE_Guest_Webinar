@@ -1,0 +1,8 @@
+This script will skip the login page and take visitors diectly to the registration page.
+
+<script>
+$(document).ready(function(){
+$('#ui_login_self_reg_button').trigger('click');
+$('[id="page-login"]').hide();
+});
+</script>

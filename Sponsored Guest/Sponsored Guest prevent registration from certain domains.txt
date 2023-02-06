@@ -1,0 +1,26 @@
+<script> 
+    $(document).on("pageshow", function(){ 
+        setTimeout(function() {
+            $('.emailAddress').val("");
+            var domains = ["domain1.com","domain2.net","domain3.com"];
+ 
+            function validateDomain(me){
+                var idx1 = me.target.value.indexOf("@");
+                if(idx1>-1){
+                    var splitStr = me.target.value.split("@");
+                    if(domains.indexOf(splitStr[1])>-1){
+                        me.target.value="";
+                        alert("Enter a valid email address.");
+                        return false;
+                    }
+                }
+            }
+ 
+            $(function () {
+                $('.emailAddress').blur(function (ele) {
+                    validateDomain(ele);
+                });
+            });
+        }, 5000);
+    }); 
+</script>
