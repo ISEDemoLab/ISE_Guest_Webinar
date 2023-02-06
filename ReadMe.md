@@ -1,5 +1,5 @@
 # ISE_Guest_Webinar
-This repository was used for the ISE Guest Access Basics and ISE Guest Access Advanced Configurations webinars that were given on January 6 and February 7, 2023.  The purpose of the webinars was to show The built-in guest flows for Cisco ISE and how you can customize these flows and portals using Javascript and HTML.
+This repository was used for the ISE Guest Access Basics and ISE Guest Access Advanced Configurations webinars that were given on January 10 and February 7, 2023.  The purpose of the webinars was to show The built-in guest flows for Cisco ISE and how you can customize these flows and portals using Javascript and HTML.
 
 Though not all of the scripts in this repository were shown, this is the collection of scripts that I have used in customer deployments to solve specific issues or wants.  I had a hand in developing a lot of these, but not all of them.  To see what other scripts you can use and to get an idea on how to create others, please visit [ISE Guest & Web Authentication](https://cs.co/ise-guest).
 
