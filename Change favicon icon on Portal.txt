@@ -1,0 +1,25 @@
+
+//Image hosted as Custom Portal File on ISE
+
+//For external images, use the FULL URL.
+
+
+32x32 pixels, .ico file
+
+Under your portal > login page > page customization
+
+Select  "Optional content 2" field.
+Open that field by clicking on "Toggle to HTML"  and insert below script
+Close that field by clicking on "Toggle to HTML" and save portal
+
+
+
+<script>
+
+    setTimeout(function(){
+
+        jQuery("link[rel='icon'][type='image/x-icon']").attr("href", "customFiles/ise.ico");
+
+    }, 1000)
+
+</script>
