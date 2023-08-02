@@ -1,0 +1,61 @@
+This is a script that enables a basic Captcha-type verification field on a Hotspot Guest Portal
+
+<style>
+.captcha_text {
+margin-top:5px;
+float: left;
+width: 82px;
+  height: 37px;
+  font: bold 16px/37px Arial, sans;
+  text-align: center;
+  background-color: #ededed;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.captcha_input
+{
+float: left;
+width: 250px;
+margin-left:45px;
+}
+</style><script>
+var submitButton = jQuery('#ui_login_signon_button');
+var submitButtonUiContainer = submitButton.parent();
+submitButtonUiContainer.css('opacity', 0.25);
+submitButton.addClass('disabled');
+var captchaBlock = jQuery('<div class="captcha_container"></div>');
+captchaBlock.html('<div class="captcha_text"></div> <div class="captcha_input"><input placeholder="Enter code" type="text" /></div>');
+jQuery('form[name="loginForm"]').find('.cisco-ise-form-buttons').before(captchaBlock);
+
+var login_captcha='';
+    function login_randomgen() {
+        for (ranNum = 1; ranNum <= 6; ranNum++) {
+            login_captcha += Math.floor(Math.random() * 10).toString();
+        }
+        jQuery('.captcha_text').html(login_captcha);
+    }
+    login_randomgen();
+
+jQuery('.captcha_input').find('input').on('input', function(evt){
+if(jQuery(this).val() == login_captcha)
+{
+submitButton.removeClass('disabled');
+submitButtonUiContainer.css('opacity', 1);
+}
+else
+{
+submitButton.addClass('disabled');
+submitButtonUiContainer.css('opacity', 0.25);
+}
+});
+
+submitButton.on('click', function(evt){
+evt.preventDefault();
+if(jQuery(this).hasClass('disabled')) return;
+jQuery('form[name="loginForm"]').submit();
+});
+</script>
