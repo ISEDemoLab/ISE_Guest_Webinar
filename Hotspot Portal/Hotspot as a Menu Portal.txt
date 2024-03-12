@@ -1,0 +1,23 @@
+I use this in conjunction with the 'Hotspot as a Message Portal' script to keep is as just a menu with links to the portals
+
+If you want test links instead of buttons, remove '<button type="submit">' and '</button>'
+
+<script>
+jQuery(window).ready(function() {
+var hostname = window.location.hostname;
+var WebSessionId = window.location.href.substr(window.location.href.search("\\?")).split("=")[2];
+jQuery('.cisco-ise-body').append(' <center><a href="https://'+hostname+':8443/portal/PortalSetup.action?portal=3c379d60-fceb-11e5-b628-005056a49fb9&sessionId='+WebSessionId+'&action=cwa" style="color: rgb(0,255,0)"><font color="212121"><button type="submit">Go to Guest Portal</button></font></a></center>');
+});
+</script>
+
+<script>
+jQuery(window).ready(function() {
+var hostname = window.location.hostname;
+var WebSessionId = window.location.href.substr(window.location.href.search("\\?")).split("=")[2];
+jQuery('.cisco-ise-body').append(' <center><a href="https://'+hostname+':8443/portal/PortalSetup.action?portal=9d579d60-abeb-12f6-d768-016948a40fc99&sessionId='+WebSessionId+'&action=cwa" style="color: rgb(0,255,0)"><font color="212121"><button type="submit">Go to Employee Portal</button></font></a></center>');
+});
+</script>
+
+You will need a new <script> section for each portal you want to link. Change the port number and the PortalID to match yours.
+
+https://community.cisco.com/t5/network-access-control/linking-one-guest-portal-to-another-guest-portal/m-p/3467537
